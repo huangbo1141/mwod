@@ -120,7 +120,23 @@ extern CGFloat GLOBAL_MENUWIDTH;
 
 extern int g_thumb_w;
 extern int g_thumb_h;
+extern int g_thumb_w_logined ;
+extern int g_thumb_h_logined ;
+extern CGFloat g_l1_top ;
+extern CGFloat g_l2_top ;
+extern CGFloat g_l1_top_land ;
+extern CGFloat g_l2_top_land ;
+extern CGFloat g_l1_top_logined ;
+extern CGFloat g_l2_top_logined ;
+extern CGFloat g_l1_top_logined_land ;
+extern CGFloat g_l2_top_logined_land ;
 
+extern CGFloat g_font_title ;
+extern CGFloat g_font_subtitle ;
+extern CGFloat g_font_title_logined ;
+extern CGFloat g_font_subtitle_logined ;
+
+extern CGFloat g_font_welcome ;
 typedef void (^PermissionCallback)(BOOL ret);
 typedef void (^ImagePickerCallback)(UIImage* image);
 typedef void (^VideoInfoCallBack)(TblPost *post,NSMutableDictionary *data,BOOL ret);

@@ -16,5 +16,6 @@
 -(void)goMain;
 -(void)defaultHome;
 -(void)registerDeviceUUID;
+-(void)unRegisterDeviceUUID;
 @end
 

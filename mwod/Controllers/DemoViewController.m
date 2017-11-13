@@ -19,6 +19,7 @@
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import "LoginViewController.h"
 #import "SignupViewController.h"
+#import "TestLoginViewController.h"
 
 @interface DemoViewController ()
 {
@@ -36,9 +37,96 @@
     
     [self initConf];
     [self initSample];
+    [self initCons];
+//    [self initObserer];
+}
+//-(void)initObserer{
+//    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+//    [center addObserver:self selector:@selector(rotated:) name:UIDeviceOrientationDidChangeNotification object:nil];
+//}
+//-(void)rotated:(NSNotification*)noti{
+//    [self setStackAxis];
+//}
+//-(void)dealloc{
+//    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+//    [center removeObserver:self];
+//}
+-(void)initCons{
+    self.cons_L1_TOP.constant = g_l1_top;
+    self.cons_L2_TOP.constant = g_l2_top;
+    
+    NSString*fontname1 = self.lblTitle1.font.fontName;
+    NSString*fontname2 = self.lblSubtitle1.font.fontName;
+    UIFont*font1 = [UIFont fontWithName:fontname1 size:g_font_title];
+    UIFont*font2 = [UIFont fontWithName:fontname2 size:g_font_subtitle];
+    self.lblTitle1.font = font1;
+    self.lblTitle2.font = font1;
+    self.lblSubtitle1.font = font2;
+    self.lblSubtitle2.font = font2;
+    
+    NSString*fontname = self.lblWelcome.font.fontName;
+    self.lblWelcome.font = [UIFont fontWithName:fontname size:g_font_welcome];
+    if ([CGlobal isIphone]) {
+        
+    }else{
+        self.lblWelcome.text = @"Daily 8-12 minute follow along mobility and recovery\nvideos that can be done at the gym and at home.";
+    }
+    
+}
+-(void)setStackAxis{
+    if (![CGlobal isIphone]) {
+        if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+            self.stackHolder.axis = UILayoutConstraintAxisVertical;
+            
+            [self.collectionview1 reloadData];
+            [self.collectionview2 reloadData];
+            
+            self.cons_L1_TOP.constant = g_l1_top;
+            self.cons_L2_TOP.constant = g_l2_top;
+            
+            [self.lblTitle1 setNeedsUpdateConstraints];
+            [self.lblTitle2 setNeedsUpdateConstraints];
+            [self.lblSubtitle1 setNeedsUpdateConstraints];
+            [self.lblSubtitle2 setNeedsUpdateConstraints];
+            
+            [self.lblTitle1 layoutIfNeeded];
+            [self.lblTitle2 layoutIfNeeded];
+            [self.lblSubtitle1 layoutIfNeeded];
+            [self.lblSubtitle2 layoutIfNeeded];
+        }else{
+            self.stackHolder.axis = UILayoutConstraintAxisHorizontal;
+            
+            [self.collectionview1 reloadData];
+            [self.collectionview2 reloadData];
+            
+            self.cons_L1_TOP.constant = g_l1_top_land;
+            self.cons_L2_TOP.constant = g_l2_top_land;;
+            
+            [self.lblTitle1 setNeedsUpdateConstraints];
+            [self.lblTitle2 setNeedsUpdateConstraints];
+            [self.lblSubtitle1 setNeedsUpdateConstraints];
+            [self.lblSubtitle2 setNeedsUpdateConstraints];
+            
+            [self.lblTitle1 layoutIfNeeded];
+            [self.lblTitle2 layoutIfNeeded];
+            [self.lblSubtitle1 layoutIfNeeded];
+            [self.lblSubtitle2 layoutIfNeeded];
+        }
+    }
+}
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    NSLog(@"viewWillTransitionToSize");
+    double delayInSeconds = 0.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        //code to be executed on the main queue after delay
+        [self setStackAxis];
+    });
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBar.hidden = true;
+    
+    [self setStackAxis];
 }
 -(void)initConf{
     self.carouselLayout1.scrollDirection =  UICollectionViewScrollDirectionHorizontal;
@@ -57,14 +145,22 @@
     self.collectionview2.dataSource = self;
     
     self.carouselLayout1.itemSize = CGSizeMake(g_thumb_w, g_thumb_h);
-    self.carouselLayout1.sideItemScale = 0.9;
-    self.carouselLayout1.sideItemAlpha = 0.9;
-    
     
     
     self.carouselLayout2.itemSize = CGSizeMake(g_thumb_w, g_thumb_h);
-    self.carouselLayout2.sideItemScale = 0.9;
-    self.carouselLayout2.sideItemAlpha = 0.9;
+    if ([CGlobal isIphone]) {
+        self.carouselLayout1.sideItemScale = 0.9;
+        self.carouselLayout1.sideItemAlpha = 0.9;
+        
+        self.carouselLayout2.sideItemScale = 0.9;
+        self.carouselLayout2.sideItemAlpha = 0.9;
+    }else{
+        self.carouselLayout1.sideItemScale = 0.7;
+        self.carouselLayout1.sideItemAlpha = 0.9;
+        
+        self.carouselLayout2.sideItemScale = 0.7;
+        self.carouselLayout2.sideItemAlpha = 0.9;
+    }
     
     self.collectionview1.showsHorizontalScrollIndicator = false;
     self.collectionview2.showsHorizontalScrollIndicator = false;
@@ -201,17 +297,17 @@
     }
 }
 - (IBAction)tapSignup:(id)sender {
-//    UIStoryboard* ms = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    SignupViewController*vc = [ms instantiateViewControllerWithIdentifier:@"SignupViewController"] ;
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [self.navigationController pushViewController:vc animated:true];
-//    });
-    NSString*urlString = @"https://www.mobilitywod.com/mwod-pro-b/";
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+    UIStoryboard* ms = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TestLoginViewController*vc = [ms instantiateViewControllerWithIdentifier:@"TestLoginViewController"] ;
+    vc.mode = @"signup";
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.navigationController pushViewController:vc animated:true];
+    });
 }
 - (IBAction)tapLogin:(id)sender {
     UIStoryboard* ms = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LoginViewController*vc = [ms instantiateViewControllerWithIdentifier:@"LoginViewController"] ;
+    TestLoginViewController*vc = [ms instantiateViewControllerWithIdentifier:@"TestLoginViewController"] ;
+    vc.mode = @"login";
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.navigationController pushViewController:vc animated:true];
     });

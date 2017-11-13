@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10490C441FB55FA200D42083 /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 10490C431FB55FA200D42083 /* UIDeviceHardware.m */; };
+		10FD42121FB49E380088AD04 /* control_center.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FD42111FB49E360088AD04 /* control_center.png */; };
+		10FD42161FB49EE60088AD04 /* ViewPhotoFull.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FD42131FB49EE50088AD04 /* ViewPhotoFull.xib */; };
+		10FD42171FB49EE60088AD04 /* ViewPhotoFull.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FD42151FB49EE60088AD04 /* ViewPhotoFull.m */; };
+		10FD42191FB4A17C0088AD04 /* airplay.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FD42181FB4A17B0088AD04 /* airplay.png */; };
 		3EB6CC5CD405FD7588C5C2BE /* libPods-mwod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2524FEA29C4B7959DB672058 /* libPods-mwod.a */; };
+		4D03A12E1FB0B95400AD98FC /* ico_mwod_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D03A12D1FB0B8C500AD98FC /* ico_mwod_bg.png */; };
 		4D178BE41FA9D71200131828 /* ico_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D178BE31FA9D71200131828 /* ico_user.png */; };
+		4D178BE71FAA405A00131828 /* TestLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D178BE61FAA405A00131828 /* TestLoginViewController.m */; };
+		4D19FA821FAB553A00C17789 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D19FA811FAB553A00C17789 /* logout.png */; };
 		4D1DCF611FA469A800691941 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D1DCF5E1FA469A800691941 /* Info.plist */; };
 		4D1DCF621FA469A800691941 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DCF601FA469A800691941 /* UPCarouselFlowLayout.swift */; };
 		4D1DCF651FA46B7500691941 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DCF641FA46B7500691941 /* DemoViewController.m */; };
@@ -102,8 +110,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10490C3C1FB55AC300D42083 /* DeviceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceKit.framework; path = Carthage/Build/iOS/DeviceKit.framework; sourceTree = "<group>"; };
+		10490C3E1FB55B4900D42083 /* DeviceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceKit.framework; path = Carthage/Build/iOS/DeviceKit.framework; sourceTree = "<group>"; };
+		10490C421FB55FA200D42083 /* UIDeviceHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceHardware.h; sourceTree = "<group>"; };
+		10490C431FB55FA200D42083 /* UIDeviceHardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDeviceHardware.m; sourceTree = "<group>"; };
+		10FD42111FB49E360088AD04 /* control_center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = control_center.png; sourceTree = "<group>"; };
+		10FD42131FB49EE50088AD04 /* ViewPhotoFull.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewPhotoFull.xib; sourceTree = "<group>"; };
+		10FD42141FB49EE50088AD04 /* ViewPhotoFull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPhotoFull.h; sourceTree = "<group>"; };
+		10FD42151FB49EE60088AD04 /* ViewPhotoFull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPhotoFull.m; sourceTree = "<group>"; };
+		10FD42181FB4A17B0088AD04 /* airplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = airplay.png; sourceTree = "<group>"; };
 		2524FEA29C4B7959DB672058 /* libPods-mwod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mwod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D03A12D1FB0B8C500AD98FC /* ico_mwod_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_mwod_bg.png; sourceTree = "<group>"; };
 		4D178BE31FA9D71200131828 /* ico_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_user.png; sourceTree = "<group>"; };
+		4D178BE51FAA405A00131828 /* TestLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLoginViewController.h; sourceTree = "<group>"; };
+		4D178BE61FAA405A00131828 /* TestLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLoginViewController.m; sourceTree = "<group>"; };
+		4D19FA811FAB553A00C17789 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		4D1DCF5E1FA469A800691941 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D1DCF5F1FA469A800691941 /* UPCarouselFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPCarouselFlowLayout.h; sourceTree = "<group>"; };
 		4D1DCF601FA469A800691941 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
@@ -328,6 +349,7 @@
 		4D5FED081FA3181B009B6F90 = {
 			isa = PBXGroup;
 			children = (
+				10490C3E1FB55B4900D42083 /* DeviceKit.framework */,
 				4D5FED131FA3181B009B6F90 /* mwod */,
 				4D5FED121FA3181B009B6F90 /* Products */,
 				3A0CE41ED09119C9FC9FB92F /* Pods */,
@@ -353,6 +375,9 @@
 				4D5FED1A1FA3181B009B6F90 /* Main.storyboard */,
 				4D5FED1D1FA3181B009B6F90 /* Assets.xcassets */,
 				4D5FED1F1FA3181B009B6F90 /* LaunchScreen.storyboard */,
+				10FD42141FB49EE50088AD04 /* ViewPhotoFull.h */,
+				10FD42151FB49EE60088AD04 /* ViewPhotoFull.m */,
+				10FD42131FB49EE50088AD04 /* ViewPhotoFull.xib */,
 				4D1DCF691FA4763A00691941 /* Cell */,
 				4D5FEDF51FA31AC1009B6F90 /* Controllers */,
 				4D5FEDB41FA31885009B6F90 /* Model2 */,
@@ -413,6 +438,8 @@
 		4D5FED561FA31879009B6F90 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				10490C421FB55FA200D42083 /* UIDeviceHardware.h */,
+				10490C431FB55FA200D42083 /* UIDeviceHardware.m */,
 				4D1DCF5D1FA469A800691941 /* UPCarouselFlowLayout */,
 				4D5FED5F1FA31879009B6F90 /* CustomTextField.h */,
 				4D5FED601FA31879009B6F90 /* CustomTextField.m */,
@@ -685,6 +712,8 @@
 				4D3F31FC1FA82B9000F0CAF7 /* SignupViewController.m */,
 				4DDF4DB71FA8F6A900185174 /* MyNavViewController.h */,
 				4DDF4DB81FA8F6A900185174 /* MyNavViewController.m */,
+				4D178BE51FAA405A00131828 /* TestLoginViewController.h */,
+				4D178BE61FAA405A00131828 /* TestLoginViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -692,6 +721,10 @@
 		4D5FEDFC1FA32713009B6F90 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				10FD42181FB4A17B0088AD04 /* airplay.png */,
+				10FD42111FB49E360088AD04 /* control_center.png */,
+				4D03A12D1FB0B8C500AD98FC /* ico_mwod_bg.png */,
+				4D19FA811FAB553A00C17789 /* logout.png */,
 				4D178BE31FA9D71200131828 /* ico_user.png */,
 				4DF490A81FA860EE00C44190 /* ico_video_preview.png */,
 				4D5FEDFF1FA327E4009B6F90 /* logo_text.png */,
@@ -731,6 +764,7 @@
 		667F4F57DFA2E50AB644A921 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10490C3C1FB55AC300D42083 /* DeviceKit.framework */,
 				4D5FEDF31FA3199D009B6F90 /* libsqlite3.0.tbd */,
 				2524FEA29C4B7959DB672058 /* libPods-mwod.a */,
 			);
@@ -805,14 +839,19 @@
 			files = (
 				4D178BE41FA9D71200131828 /* ico_user.png in Resources */,
 				4DF490A91FA860EF00C44190 /* ico_video_preview.png in Resources */,
+				4D19FA821FAB553A00C17789 /* logout.png in Resources */,
 				4D5FEDB11FA31879009B6F90 /* ComboDropTableViewCell.xib in Resources */,
+				10FD42121FB49E380088AD04 /* control_center.png in Resources */,
 				4D5FEDA61FA31879009B6F90 /* Info.plist in Resources */,
+				10FD42191FB4A17C0088AD04 /* airplay.png in Resources */,
 				4D5FEDAC1FA31879009B6F90 /* combobox_down@2x.png in Resources */,
 				4D5FEDAE1FA31879009B6F90 /* combobox_up@2x.png in Resources */,
 				4D5FEDAF1FA31879009B6F90 /* combobox_up_highlighed@2x.png in Resources */,
 				4D5FEE001FA327E4009B6F90 /* logo_text.png in Resources */,
 				4D1DCF6E1FA4765B00691941 /* VideoCollectionViewCell.xib in Resources */,
 				4D5FEDAD1FA31879009B6F90 /* combobox_down_highlighed@2x.png in Resources */,
+				10FD42161FB49EE60088AD04 /* ViewPhotoFull.xib in Resources */,
+				4D03A12E1FB0B95400AD98FC /* ico_mwod_bg.png in Resources */,
 				4D5FED211FA3181B009B6F90 /* LaunchScreen.storyboard in Resources */,
 				4D1DCF611FA469A800691941 /* Info.plist in Resources */,
 				4D5FED1E1FA3181B009B6F90 /* Assets.xcassets in Resources */,
@@ -901,6 +940,7 @@
 				4D5FEDA21FA31879009B6F90 /* NSObject+TLYSwizzlingHelpers.m in Sources */,
 				4D5FEDA91FA31879009B6F90 /* TLYShyViewController.m in Sources */,
 				4D5FEDAA1FA31879009B6F90 /* TLYShyNavBarManager.m in Sources */,
+				4D178BE71FAA405A00131828 /* TestLoginViewController.m in Sources */,
 				4D5FED551FA31868009B6F90 /* UIView+Property.m in Sources */,
 				4D5FEDEA1FA31885009B6F90 /* GooglePlace.m in Sources */,
 				4D5FED9F1FA31879009B6F90 /* GCPlaceholderTextView.m in Sources */,
@@ -911,9 +951,11 @@
 				4D5FEDE51FA31885009B6F90 /* BaseModel.m in Sources */,
 				4D3F31F71FA8204600F0CAF7 /* LoginViewController.m in Sources */,
 				4D5FEDA71FA31879009B6F90 /* TLYShyScrollViewController.m in Sources */,
+				10490C441FB55FA200D42083 /* UIDeviceHardware.m in Sources */,
 				4D5FEDA31FA31879009B6F90 /* TLYDelegateProxy.m in Sources */,
 				4D5FEDE71FA31885009B6F90 /* GeoCodeResult.m in Sources */,
 				4D5FED9E1FA31879009B6F90 /* EVFaceTracker.m in Sources */,
+				10FD42171FB49EE60088AD04 /* ViewPhotoFull.m in Sources */,
 				4DF490D31FA8752D00C44190 /* UIUnderlinedButton.m in Sources */,
 				4D5FED4E1FA31868009B6F90 /* NSArray+BVJSONString.m in Sources */,
 				4D5FED501FA31868009B6F90 /* NSString+Common.m in Sources */,
@@ -1085,16 +1127,20 @@
 			baseConfigurationReference = 73EA2112668137DC41955623 /* Pods-mwod.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Youssef (2GVTEYU3HY)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MobilityWOD Inc. (59898PPYAF)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = XGA573S8WN;
+				DEVELOPMENT_TEAM = 59898PPYAF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = mwod/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.panda.mwod;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mwod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c7751dd8-fb97-4eeb-97db-bad42f0a7112";
-				PROVISIONING_PROFILE_SPECIFIER = "panda dev wild";
+				PROVISIONING_PROFILE = "12ce034c-0831-4860-9f1a-30a320fac4ca";
+				PROVISIONING_PROFILE_SPECIFIER = "mwod appstore";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1105,16 +1151,20 @@
 			baseConfigurationReference = 87B6627F5AD65242157EE4AE /* Pods-mwod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Andrew Youssef (2GVTEYU3HY)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MobilityWOD Inc. (59898PPYAF)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = XGA573S8WN;
+				DEVELOPMENT_TEAM = 59898PPYAF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = mwod/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.panda.mwod;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mwod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c7751dd8-fb97-4eeb-97db-bad42f0a7112";
-				PROVISIONING_PROFILE_SPECIFIER = "panda dev wild";
+				PROVISIONING_PROFILE = "12ce034c-0831-4860-9f1a-30a320fac4ca";
+				PROVISIONING_PROFILE_SPECIFIER = "mwod appstore";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

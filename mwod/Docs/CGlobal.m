@@ -131,7 +131,24 @@ NSMutableArray* menu_topList;
 
 int g_thumb_w = 300;
 int g_thumb_h = 167;
+int g_thumb_w_logined = 300;
+int g_thumb_h_logined = 167;
+CGFloat g_l1_top = 0;
+CGFloat g_l2_top = 0;
+CGFloat g_l1_top_land =0 ;
+CGFloat g_l2_top_land =0 ;
+CGFloat g_l1_top_logined = 0;
+CGFloat g_l2_top_logined = 0;
+CGFloat g_l1_top_logined_land = 0;
+CGFloat g_l2_top_logined_land = 0;
 
+
+CGFloat g_font_title = 32 ;
+CGFloat g_font_subtitle = 16 ;
+CGFloat g_font_title_logined = 32;
+CGFloat g_font_subtitle_logined = 16;
+
+CGFloat g_font_welcome = 32;
 @implementation CGlobal
 
 +(void)initSample{

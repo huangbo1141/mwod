@@ -22,12 +22,15 @@
 #import "NetworkParser.h"
 #import "AppDelegate.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "TestLoginViewController.h"
+#import "ViewPhotoFull.h"
 
 @interface HomeViewController ()
 {
     AVPlayer* _playerURL;
 }
 
+@property (nonatomic,strong) MyPopupDialog* dialog;
 @end
 
 @implementation HomeViewController
@@ -39,6 +42,29 @@
     [self initConf];
     [self initSample];
     [self initUser];
+    [self initCons];
+}
+-(void)initCons{
+    self.cons_L1_TOP.constant = g_l1_top_logined;
+    self.cons_L2_TOP.constant = g_l2_top_logined;
+    
+    NSString*fontname1 = self.lblTitle1.font.fontName;
+    NSString*fontname2 = self.lblSubtitle1.font.fontName;
+    UIFont*font1 = [UIFont fontWithName:fontname1 size:g_font_title_logined];
+    UIFont*font2 = [UIFont fontWithName:fontname2 size:g_font_subtitle_logined];
+    self.lblTitle1.font = font1;
+    self.lblTitle2.font = font1;
+    self.lblSubtitle1.font = font2;
+    self.lblSubtitle2.font = font2;
+    
+    if (![CGlobal isIphone]) {
+//        NSString*fontname = _lblUser.font.fontName;
+//        UIFont*font = [UIFont fontWithName:fontname size:19];
+//        _lblUser.font = font1;
+        
+        _profileImageContainer.cornerRadious = 38;
+    }
+    
 }
 -(void)initUser{
     EnvVar* env = [CGlobal sharedId].env;
@@ -69,14 +95,21 @@
     self.collectionview2.delegate = self;
     self.collectionview2.dataSource = self;
     
-    self.carouselLayout1.itemSize = CGSizeMake(g_thumb_w, g_thumb_h);
-    self.carouselLayout1.sideItemScale = 0.9;
-    self.carouselLayout1.sideItemAlpha = 0.9;
-    
-    
-    self.carouselLayout2.itemSize = CGSizeMake(g_thumb_w, g_thumb_h);
-    self.carouselLayout2.sideItemScale = 0.9;
-    self.carouselLayout2.sideItemAlpha = 0.9;
+    self.carouselLayout1.itemSize = CGSizeMake(g_thumb_w_logined, g_thumb_h_logined);
+    self.carouselLayout2.itemSize = CGSizeMake(g_thumb_w_logined, g_thumb_h_logined);
+    if ([CGlobal isIphone]) {
+        self.carouselLayout1.sideItemScale = 0.9;
+        self.carouselLayout1.sideItemAlpha = 0.9;
+        
+        self.carouselLayout2.sideItemScale = 0.9;
+        self.carouselLayout2.sideItemAlpha = 0.9;
+    }else{
+        self.carouselLayout1.sideItemScale = 0.7;
+        self.carouselLayout1.sideItemAlpha = 0.9;
+        
+        self.carouselLayout2.sideItemScale = 0.7;
+        self.carouselLayout2.sideItemAlpha = 0.9;
+    }
     
     self.collectionview1.showsHorizontalScrollIndicator = false;
     self.collectionview2.showsHorizontalScrollIndicator = false;
@@ -84,16 +117,65 @@
     self.collectionview1.backgroundColor = [UIColor clearColor];
     self.collectionview2.backgroundColor = [UIColor clearColor];
 }
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    NSLog(@"viewWillTransitionToSize");
+    double delayInSeconds = 0.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        //code to be executed on the main queue after delay
+        [self setStackAxis];
+    });
+}
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBar.hidden = true;
+    [self setStackAxis];
+}
+-(void)setStackAxis{
+    if (![CGlobal isIphone]) {
+        if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+            self.stackHolder.axis = UILayoutConstraintAxisVertical;
+            
+            [self.collectionview1 reloadData];
+            [self.collectionview2 reloadData];
+            
+            self.cons_L1_TOP.constant = g_l1_top_logined;
+            self.cons_L2_TOP.constant = g_l2_top_logined;
+            
+            [self.lblTitle1 setNeedsUpdateConstraints];
+            [self.lblTitle2 setNeedsUpdateConstraints];
+            [self.lblSubtitle1 setNeedsUpdateConstraints];
+            [self.lblSubtitle2 setNeedsUpdateConstraints];
+            
+            [self.lblTitle1 layoutIfNeeded];
+            [self.lblTitle2 layoutIfNeeded];
+            [self.lblSubtitle1 layoutIfNeeded];
+            [self.lblSubtitle2 layoutIfNeeded];
+        }else{
+            self.stackHolder.axis = UILayoutConstraintAxisHorizontal;
+            
+            [self.collectionview1 reloadData];
+            [self.collectionview2 reloadData];
+            
+            self.cons_L1_TOP.constant = g_l1_top_logined_land;
+            self.cons_L2_TOP.constant = g_l2_top_logined_land;
+            
+            [self.lblTitle1 setNeedsUpdateConstraints];
+            [self.lblTitle2 setNeedsUpdateConstraints];
+            [self.lblSubtitle1 setNeedsUpdateConstraints];
+            [self.lblSubtitle2 setNeedsUpdateConstraints];
+            
+            [self.lblTitle1 layoutIfNeeded];
+            [self.lblTitle2 layoutIfNeeded];
+            [self.lblSubtitle1 layoutIfNeeded];
+            [self.lblSubtitle2 layoutIfNeeded];
+        }
+    }
 }
 -(NSMutableDictionary*)checkValidate{
     EnvVar* env = [CGlobal sharedId].env;
     NSMutableDictionary*ret = [[NSMutableDictionary alloc] init];
-    NSString* username = env.username;
-    NSString* password = env.password;
-    ret[@"username"] = username;
-    ret[@"password"] = password;
+    
+    ret[@"ID"] = [NSString stringWithFormat:@"%d",env.lastLogin];
     
     return ret;
 }
@@ -218,9 +300,57 @@
         [_playerURL removeObserver:self forKeyPath:@"status" context:nil];
     }
 }
+- (IBAction)tapAirplay:(id)sender {
+    UIViewController* vc = self;
+    NSArray* array = [[NSBundle mainBundle] loadNibNamed:@"ViewPhotoFull" owner:vc options:nil];
+    ViewPhotoFull* view = array[0];
+    [view firstProcess:@{@"vc":vc,@"aDelegate":self}];
+    
+    self.dialog = [[MyPopupDialog alloc] init];
+    [self.dialog setup:view backgroundDismiss:true backgroundColor:[UIColor grayColor]];
+    [self.dialog showPopup:vc.view];
+}
+
 - (IBAction)tapVisit:(id)sender {
-    NSString*urlString = @"https://www.mobilitywod.com";
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+    UIStoryboard* ms = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TestLoginViewController*vc = [ms instantiateViewControllerWithIdentifier:@"TestLoginViewController"] ;
+    vc.mode = @"visit";
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.navigationController pushViewController:vc animated:true];
+    });
+}
+- (IBAction)tapLogout:(id)sender {
+//    EnvVar* env = [CGlobal sharedId].env;
+//    [env logOut];
+//    AppDelegate* delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+//    [delegate defaultHome];
+//    [CGlobal stopIndicator:self];
+    
+    
+    [CGlobal showIndicator:self];
+    WKWebsiteDataStore *dateStore = [WKWebsiteDataStore defaultDataStore];
+    [dateStore fetchDataRecordsOfTypes:[WKWebsiteDataStore allWebsiteDataTypes]
+                     completionHandler:^(NSArray<WKWebsiteDataRecord *> * __nonnull records) {
+                         for (WKWebsiteDataRecord *record  in records)
+                         {
+                             if ( [record.displayName containsString:@"mobilitywod"])
+                             {
+                                 [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:record.dataTypes
+                                                                           forDataRecords:@[record]
+                                                                        completionHandler:^{
+                                                                            NSLog(@"Cookies for %@ deleted successfully",record.displayName);
+                                                                        }];
+                             }
+                         }
+                         
+                         AppDelegate* delegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+                         [delegate unRegisterDeviceUUID];
+                         
+                         EnvVar* env = [CGlobal sharedId].env;
+                         [env logOut];
+                         [delegate defaultHome];
+                         [CGlobal stopIndicator:self];
+                     }];
 }
 
 /*

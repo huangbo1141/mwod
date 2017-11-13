@@ -163,25 +163,11 @@ static NSString * kDefaultsLastLoggedInKey = @"LASTLOGGEDIN";
 - (void)logOut
 {
     [self setLastLogin:-1];
-    if (self.mode == 0) {
-        [self setUsername:@""];
-        [self setEmail:@""];
-        [self setPassword:@""];
-        
-        
-    }else{
-        [self setCor_email:@""];
-        [self setCor_password:@""];
-        
-    }
+    [self setUsername:@""];
+    [self setPassword:@""];
+    [self setNickname:@""];
+    [self setAvatar:@""];
     
-//    [self setAddress1:@""];
-//    [self setAddress2:@""];
-//    [self setCity:@""];
-//    [self setState:@""];
-//    [self setPincode:@""];
-//    [self setPhone:@""];
-//    [self setLandmark:@""];
 }
 
 

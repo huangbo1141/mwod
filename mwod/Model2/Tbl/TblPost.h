@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface TblPost : NSObject
 
@@ -46,7 +47,8 @@
 @property (nonatomic,copy) NSString* m_video_path;
 @property (nonatomic,copy) NSString* m_error_desc;
 @property (nonatomic,copy) NSString* m_error_reason;
-
+@property (nonatomic,strong) UIImage* m_img_origin;
+@property (nonatomic,strong) UIImage* m_img_origin_reflect;
 
 -(instancetype)initWithDictionary:(NSDictionary*) dict;
 @end

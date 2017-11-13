@@ -16,6 +16,15 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionview2;
 @property (weak, nonatomic) IBOutlet UPCarouselFlowLayout *carouselLayout2;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_L1_TOP;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_L2_TOP;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle1;
+@property (weak, nonatomic) IBOutlet UILabel *lblSubtitle1;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle2;
+@property (weak, nonatomic) IBOutlet UILabel *lblSubtitle2;
+@property (weak, nonatomic) IBOutlet UILabel *lblWelcome;
+@property (weak, nonatomic) IBOutlet UIStackView *stackHolder;
 
 @property (strong,nonatomic) NSMutableArray *data1;
 @property (strong,nonatomic) NSMutableArray *data2;

@@ -13,6 +13,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imagePlay;
 @property (weak, nonatomic) IBOutlet UIView *viewPlay;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIView *rootView;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UIView *viewTitle;
 
 -(void)setData:(NSDictionary *)data;
 @end
