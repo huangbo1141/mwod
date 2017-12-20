@@ -35,5 +35,12 @@
 @property (weak, nonatomic) IBOutlet ColoredView *titleConteiner2;
 
 @property (weak, nonatomic) IBOutlet ColoredView *profileImageContainer;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnAirplayLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imgAirplay;
+@property (weak, nonatomic) IBOutlet UIButton *btnAirplayAction;
+
 @property (weak, nonatomic) IBOutlet UIStackView *stackHolder;
+@property (weak, nonatomic) IBOutlet UIImageView *imgLogo;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_Logo_TOP_IPAD_WRHR;
 @end

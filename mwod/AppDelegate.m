@@ -23,10 +23,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    g_isii = false;
     [self initService];
     [self calcBoxSize];
+    
     EnvVar* env = [CGlobal sharedId].env;
-    g_isii = true;
+    
     if(env.lastLogin>0){
         [self goMain];
     }else{
@@ -70,16 +72,19 @@
     g_l2_top_logined = 16;
     CGRect rt = [UIScreen mainScreen].bounds;
     if([CGlobal isIphone]){
-//        iphone x             width 375.000000 height 812.000000
-//        iphone 6             width 375.000000 height 667.000000
-//        iphone 6 plus        width 414.000000 height 736.000000
+//        iphone x              width 375.000000 height 812.000000
+//        iphone 6              width 375.000000 height 667.000000
+//        iphone 6 plus         width 414.000000 height 736.000000
+//        iphone 7              width 375.000000 height 667.000000
+//        iphone 7 plus         width 414.000000 height 736.000000
+
         CGFloat width_iphone6 = 375             ,height_iphone6 = 667;
         CGFloat width_iphone6_plus = 414        ,height_iphone6_plus = 736;
         CGFloat width_iphonex = 375             ,height_iphonex = 812;
         
         g_thumb_w =270;
         g_thumb_w_logined = 270;
-        g_font_welcome = 21;
+        g_font_welcome = 18;
         
         g_font_title = 32 ;
         g_font_subtitle = 16 ;
@@ -123,35 +128,81 @@
     }else{
         // ipad
         //  ipad air 2       width 768.000000 height 1024.000000
-        //  ipad air       width 768.000000 height 1024.000000
+        //  ipad air        width 768.000000 height 1024.000000
+        //  ipad pro 12.9 inch        width 1024.000000 height 1366.000000
+        NSDictionary* dict = @{@"ipad_pro_12_9":@[@"1024",@"1366"],@"ipad_air2":@[@"768",@"1024"],@"ipad_air":@[@"768",@"1024"]};
+        for (NSString* model in dict) {
+            NSArray* pts = dict[model];
+            CGFloat width = [pts[0] floatValue];
+            CGFloat height = [pts[1] floatValue];
+            if ((rt.size.width == width && rt.size.height == height)||(rt.size.width == height && rt.size.height == width) ) {
+                self.model = model;
+            }
+        }
         
-        g_font_welcome = 25;
+        g_font_welcome = 23;
         
         g_font_title = 48 ;
         g_font_subtitle = 24 ;
         g_font_title_logined = 44;
         g_font_subtitle_logined = 22;
         
-        g_l1_top = -4;
-        g_l2_top = -4;
-        g_l1_top_logined = 0;
-        g_l2_top_logined = 0;
+        g_l1_top = 9;
+        g_l2_top = 9;
+        g_l1_top_logined = 16;
+        g_l2_top_logined = 16;
         //g_thumb_w = rt.size.width*0.7;
         g_thumb_w = 500;
         g_thumb_w_logined = 500;
-        
-        g_l1_top_logined_land = g_l1_top_logined + 40;
-        g_l2_top_logined_land = g_l2_top_logined+ 40;
+        if (rt.size.width/2>600) {
+            g_thumb_w_land = 500;
+            g_thumb_w_logined_land = 500;
+            
+            g_thumb_w = 500;
+        }else{
+            g_thumb_w_land = 450;
+            g_thumb_w_logined_land = 450;
+            
+            g_thumb_w = 450;
+        }
+        g_l1_top_logined_land = g_l1_top_logined + 75;
+        g_l2_top_logined_land = g_l2_top_logined+ 75;
         g_l1_top_land = g_l1_top + 20;
         g_l2_top_land = g_l2_top + 20;
+        
+        if (self.model!=nil) {
+            if([self.model isEqualToString:@"ipad_pro_12_9"]){
+                g_thumb_w       = 700;
+                g_thumb_w_land  = 640;
+                
+                g_thumb_w_logined       = 720;
+                g_thumb_w_logined_land  = 660;
+                
+                g_l1_top_logined_land = g_l1_top_logined + 70;
+                g_l2_top_logined_land = g_l2_top_logined+ 70;
+                g_l1_top_land = g_l1_top + 50;
+                g_l2_top_land = g_l2_top + 50;
+            }
+        }
+        if (g_isii) {
+            g_thumb_w = 300;
+            g_thumb_w_logined = 300;
+        }
     }
     
     g_thumb_h = g_thumb_w/sample_w*sample_h;
     g_thumb_h_logined = g_thumb_w_logined/sample_w*sample_h;
+    g_thumb_h_land = g_thumb_w_land/sample_w*sample_h;
+    g_thumb_h_logined_land = g_thumb_w_logined_land/sample_w*sample_h;
     NSLog(@"%@ %@ %@",model,platform,platformString);
     NSLog(@"g_l1_top = %f g_l2_top = %f",g_l1_top,g_l2_top);
     NSLog(@"g_thumb_w = %d g_thumb_h = %d",g_thumb_w,g_thumb_h);
+    NSLog(@"g_thumb_w_land = %d g_thumb_h_land = %d",g_thumb_w_land,g_thumb_h_land);
     NSLog(@"width %f height %f",rt.size.width,rt.size.height);
+    
+    if (self.model!=nil) {
+        NSLog(@"model",self.model);
+    }
 }
 -(void)goMain{
     UIStoryboard* ms = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

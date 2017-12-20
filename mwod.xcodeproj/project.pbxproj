@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1023E2561FB9490E0009B92D /* ReplaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1023E2551FB9490E0009B92D /* ReplaceView.m */; };
+		1023E25A1FB94AB00009B92D /* TestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1023E2581FB94AB00009B92D /* TestCollectionViewCell.m */; };
+		1023E25B1FB94AB00009B92D /* TestCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1023E2591FB94AB00009B92D /* TestCollectionViewCell.xib */; };
 		10490C441FB55FA200D42083 /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 10490C431FB55FA200D42083 /* UIDeviceHardware.m */; };
 		10FD42121FB49E380088AD04 /* control_center.png in Resources */ = {isa = PBXBuildFile; fileRef = 10FD42111FB49E360088AD04 /* control_center.png */; };
 		10FD42161FB49EE60088AD04 /* ViewPhotoFull.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10FD42131FB49EE50088AD04 /* ViewPhotoFull.xib */; };
@@ -110,6 +113,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1023E2541FB9490E0009B92D /* ReplaceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReplaceView.h; sourceTree = "<group>"; };
+		1023E2551FB9490E0009B92D /* ReplaceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReplaceView.m; sourceTree = "<group>"; };
+		1023E2571FB94AB00009B92D /* TestCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewCell.h; sourceTree = "<group>"; };
+		1023E2581FB94AB00009B92D /* TestCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewCell.m; sourceTree = "<group>"; };
+		1023E2591FB94AB00009B92D /* TestCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestCollectionViewCell.xib; sourceTree = "<group>"; };
 		10490C3C1FB55AC300D42083 /* DeviceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceKit.framework; path = Carthage/Build/iOS/DeviceKit.framework; sourceTree = "<group>"; };
 		10490C3E1FB55B4900D42083 /* DeviceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceKit.framework; path = Carthage/Build/iOS/DeviceKit.framework; sourceTree = "<group>"; };
 		10490C421FB55FA200D42083 /* UIDeviceHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDeviceHardware.h; sourceTree = "<group>"; };
@@ -342,6 +350,11 @@
 				4D1DCF6A1FA4765B00691941 /* VideoCollectionViewCell.h */,
 				4D1DCF6B1FA4765B00691941 /* VideoCollectionViewCell.m */,
 				4D1DCF6C1FA4765B00691941 /* VideoCollectionViewCell.xib */,
+				1023E2541FB9490E0009B92D /* ReplaceView.h */,
+				1023E2551FB9490E0009B92D /* ReplaceView.m */,
+				1023E2571FB94AB00009B92D /* TestCollectionViewCell.h */,
+				1023E2581FB94AB00009B92D /* TestCollectionViewCell.m */,
+				1023E2591FB94AB00009B92D /* TestCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -855,6 +868,7 @@
 				4D5FED211FA3181B009B6F90 /* LaunchScreen.storyboard in Resources */,
 				4D1DCF611FA469A800691941 /* Info.plist in Resources */,
 				4D5FED1E1FA3181B009B6F90 /* Assets.xcassets in Resources */,
+				1023E25B1FB94AB00009B92D /* TestCollectionViewCell.xib in Resources */,
 				4D5FED1C1FA3181B009B6F90 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -933,6 +947,7 @@
 				4D5FEDB21FA31879009B6F90 /* UIComboBox.m in Sources */,
 				4DF490CC1FA8752D00C44190 /* ColoredLabel.m in Sources */,
 				4D5FEDFB1FA31B14009B6F90 /* MainVC.m in Sources */,
+				1023E25A1FB94AB00009B92D /* TestCollectionViewCell.m in Sources */,
 				4D5FEDEE1FA31885009B6F90 /* WNAActionType.m in Sources */,
 				4D5FED521FA31868009B6F90 /* NSUserDefaults+CustomFontAdditions.m in Sources */,
 				4D5FED511FA31868009B6F90 /* NSString+HTMLTrim.m in Sources */,
@@ -993,6 +1008,7 @@
 				4D5FED531FA31868009B6F90 /* UIImage+animatedGIF.m in Sources */,
 				4D5FEDF01FA31885009B6F90 /* ImageResponse.m in Sources */,
 				4D5FEDA41FA31879009B6F90 /* UIScrollView+Helpers.m in Sources */,
+				1023E2561FB9490E0009B92D /* ReplaceView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1127,9 +1143,10 @@
 			baseConfigurationReference = 73EA2112668137DC41955623 /* Pods-mwod.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MobilityWOD Inc. (59898PPYAF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Juliet Starrett (SVS9DHUMR5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Juliet Starrett (SVS9DHUMR5)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 59898PPYAF;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1139,8 +1156,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mwod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "12ce034c-0831-4860-9f1a-30a320fac4ca";
-				PROVISIONING_PROFILE_SPECIFIER = "mwod appstore";
+				PROVISIONING_PROFILE = "e56814ea-6eb2-42d0-b446-ef96cbb205c3";
+				PROVISIONING_PROFILE_SPECIFIER = "mwod dev";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1151,9 +1168,10 @@
 			baseConfigurationReference = 87B6627F5AD65242157EE4AE /* Pods-mwod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: MobilityWOD Inc. (59898PPYAF)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Juliet Starrett (SVS9DHUMR5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Juliet Starrett (SVS9DHUMR5)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 59898PPYAF;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1163,8 +1181,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mwod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "12ce034c-0831-4860-9f1a-30a320fac4ca";
-				PROVISIONING_PROFILE_SPECIFIER = "mwod appstore";
+				PROVISIONING_PROFILE = "e56814ea-6eb2-42d0-b446-ef96cbb205c3";
+				PROVISIONING_PROFILE_SPECIFIER = "mwod dev";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

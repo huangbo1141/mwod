@@ -20,6 +20,8 @@
 #import "LoginViewController.h"
 #import "SignupViewController.h"
 #import "TestLoginViewController.h"
+#import "NetworkParser.h"
+#import "AppDelegate.h"
 
 @interface DemoViewController ()
 {
@@ -35,22 +37,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self initCons];
     [self initConf];
     [self initSample];
-    [self initCons];
-//    [self initObserer];
+    
 }
-//-(void)initObserer{
-//    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-//    [center addObserver:self selector:@selector(rotated:) name:UIDeviceOrientationDidChangeNotification object:nil];
-//}
-//-(void)rotated:(NSNotification*)noti{
-//    [self setStackAxis];
-//}
-//-(void)dealloc{
-//    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-//    [center removeObserver:self];
-//}
 -(void)initCons{
     self.cons_L1_TOP.constant = g_l1_top;
     self.cons_L2_TOP.constant = g_l2_top;
@@ -70,13 +61,30 @@
         
     }else{
         self.lblWelcome.text = @"Daily 8-12 minute follow along mobility and recovery\nvideos that can be done at the gym and at home.";
+        self.lblWelcome.text = @"Daily follow-along videos to improve athletic performance, increase \nmobility, prevent injury, resolve pain, and optimize recovery.";
     }
     
+    
+}
+-(void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBar.hidden = true;
+    double delayInSeconds = 0.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        //code to be executed on the main queue after delay
+        [self setStackAxis];
+    });
 }
 -(void)setStackAxis{
+    AppDelegate* delegate = (AppDelegate* )[[UIApplication sharedApplication] delegate];
     if (![CGlobal isIphone]) {
         if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
             self.stackHolder.axis = UILayoutConstraintAxisVertical;
+            
+            self.carouselLayout1.itemSize = CGSizeMake(g_thumb_w, g_thumb_h);
+            self.carouselLayout2.itemSize = CGSizeMake(g_thumb_w, g_thumb_h);
+            
+//            self.carouselLayout1.sideItemAlpha = 0.9;
             
             [self.collectionview1 reloadData];
             [self.collectionview2 reloadData];
@@ -84,17 +92,24 @@
             self.cons_L1_TOP.constant = g_l1_top;
             self.cons_L2_TOP.constant = g_l2_top;
             
-            [self.lblTitle1 setNeedsUpdateConstraints];
-            [self.lblTitle2 setNeedsUpdateConstraints];
-            [self.lblSubtitle1 setNeedsUpdateConstraints];
-            [self.lblSubtitle2 setNeedsUpdateConstraints];
-            
-            [self.lblTitle1 layoutIfNeeded];
-            [self.lblTitle2 layoutIfNeeded];
-            [self.lblSubtitle1 layoutIfNeeded];
-            [self.lblSubtitle2 layoutIfNeeded];
+            NSArray* array = @[self.lblTitle1,self.lblTitle2,self.lblSubtitle1,self.lblSubtitle2];
+            for (UIView* view in array) {
+                [view setNeedsUpdateConstraints];
+                [view layoutIfNeeded];
+            }
+            if ([delegate.model isEqualToString:@"ipad_pro_12_9"]) {
+                self.cons_Logo_TOP_IPAD_WRHR.constant = 20;
+                NSArray* array = @[self.imgLogo,self.lblWelcome];
+                for (UIView* view in array) {
+                    [view setNeedsUpdateConstraints];
+                    [view layoutIfNeeded];
+                }
+            }
         }else{
             self.stackHolder.axis = UILayoutConstraintAxisHorizontal;
+            
+            self.carouselLayout1.itemSize = CGSizeMake(g_thumb_w_land, g_thumb_h_land);
+            self.carouselLayout2.itemSize = CGSizeMake(g_thumb_w_land, g_thumb_h_land);
             
             [self.collectionview1 reloadData];
             [self.collectionview2 reloadData];
@@ -102,15 +117,19 @@
             self.cons_L1_TOP.constant = g_l1_top_land;
             self.cons_L2_TOP.constant = g_l2_top_land;;
             
-            [self.lblTitle1 setNeedsUpdateConstraints];
-            [self.lblTitle2 setNeedsUpdateConstraints];
-            [self.lblSubtitle1 setNeedsUpdateConstraints];
-            [self.lblSubtitle2 setNeedsUpdateConstraints];
-            
-            [self.lblTitle1 layoutIfNeeded];
-            [self.lblTitle2 layoutIfNeeded];
-            [self.lblSubtitle1 layoutIfNeeded];
-            [self.lblSubtitle2 layoutIfNeeded];
+            NSArray* array = @[self.lblTitle1,self.lblTitle2,self.lblSubtitle1,self.lblSubtitle2];
+            for (UIView* view in array) {
+                [view setNeedsUpdateConstraints];
+                [view layoutIfNeeded];
+            }
+            if ([delegate.model isEqualToString:@"ipad_pro_12_9"]) {
+                self.cons_Logo_TOP_IPAD_WRHR.constant = 80;
+                NSArray* array = @[self.imgLogo,self.lblWelcome];
+                for (UIView* view in array) {
+                    [view setNeedsUpdateConstraints];
+                    [view layoutIfNeeded];
+                }
+            }
         }
     }
 }
@@ -123,11 +142,6 @@
         [self setStackAxis];
     });
 }
--(void)viewWillAppear:(BOOL)animated{
-    self.navigationController.navigationBar.hidden = true;
-    
-    [self setStackAxis];
-}
 -(void)initConf{
     self.carouselLayout1.scrollDirection =  UICollectionViewScrollDirectionHorizontal;
     self.carouselLayout2.scrollDirection =  UICollectionViewScrollDirectionHorizontal;
@@ -138,16 +152,7 @@
     nib = [UINib nibWithNibName:@"VideoCollectionViewCell" bundle:nil];
     [self.collectionview2 registerNib:nib forCellWithReuseIdentifier:@"cell"];
     
-    self.collectionview1.delegate = self;
-    self.collectionview1.dataSource = self;
     
-    self.collectionview2.delegate = self;
-    self.collectionview2.dataSource = self;
-    
-    self.carouselLayout1.itemSize = CGSizeMake(g_thumb_w, g_thumb_h);
-    
-    
-    self.carouselLayout2.itemSize = CGSizeMake(g_thumb_w, g_thumb_h);
     if ([CGlobal isIphone]) {
         self.carouselLayout1.sideItemScale = 0.9;
         self.carouselLayout1.sideItemAlpha = 0.9;
@@ -162,6 +167,9 @@
         self.carouselLayout2.sideItemAlpha = 0.9;
     }
     
+    self.carouselLayout1.itemSize = CGSizeMake(g_thumb_w, g_thumb_h);
+    self.carouselLayout2.itemSize = CGSizeMake(g_thumb_w, g_thumb_h);
+    
     self.collectionview1.showsHorizontalScrollIndicator = false;
     self.collectionview2.showsHorizontalScrollIndicator = false;
     
@@ -169,36 +177,74 @@
     self.collectionview2.backgroundColor = [UIColor clearColor];
 }
 -(void)initSample{
-    NSMutableArray* array = [[NSMutableArray alloc] init];
-    TblPost* post = [[TblPost alloc] init];
-    post.m_video_id = @"186351783";
-    post.m_video_type = @"0";
-    post.m_video_path = @"0";
-    post.m_video_thumb = @"https://i.vimeocdn.com/video/596374602";
+//    NSMutableArray* array = [[NSMutableArray alloc] init];
+//    TblPost* post = [[TblPost alloc] init];
+//    // 52291
+//    post.m_video_id = @"186351783";
+//    post.m_video_type = @"0";
+//    post.m_video_path = @"0";
+//    post.m_video_thumb = @"https://www.mobilitywod.com/wp-content/uploads/2016/10/rx_10112016.jpg";
+//    post.post_title = @"Tuesday, October 11th, 2016";
+//    [array addObject:post];
+//
+//    post = [[TblPost alloc] init];
+//    // 53568
+//    post.m_video_id = @"186351783";
+//    post.m_video_type = @"0";
+//    post.m_video_path = @"0";
+//    post.m_video_thumb = @"https://i.vimeocdn.com/video/596374602";
+//    post.post_title = @"Tuesday, October 11th, 2016";
+//    [array addObject:post];
+//
+//
+//
+//    post = [[TblPost alloc] init];
+//    post.m_video_id = @"124466291";
+//    post.m_video_type = @"0";
+//    post.m_video_path = @"0";
+//    post.m_video_thumb = @"https://i.vimeocdn.com/video/514206897";
+//    if (g_isii) {
+//        post.post_title = @"123456";
+//    }
+//
+//    [array addObject:post];
+//
+//    self.data1 = array;
+//    self.data2 = array;
+//
+//    [self.collectionview1 reloadData];
+//    [self.collectionview2 reloadData];
     
-    [array addObject:post];
-    
-    post = [[TblPost alloc] init];
-    post.m_video_id = @"109244758";
-    post.m_video_type = @"0";
-    post.m_video_path = @"0";
-    post.m_video_thumb = @"https://i.vimeocdn.com/video/493162662";
-    
-    [array addObject:post];
-    
-    post = [[TblPost alloc] init];
-    post.m_video_id = @"124466291";
-    post.m_video_type = @"0";
-    post.m_video_path = @"0";
-    post.m_video_thumb = @"https://i.vimeocdn.com/video/514206897";
-    
-    [array addObject:post];
-    
-    self.data1 = array;
-    self.data2 = array;
-    
-    [self.collectionview1 reloadData];
-    [self.collectionview2 reloadData];
+    NSMutableDictionary*param = [[NSMutableDictionary alloc] init];
+    param[@"ID"] = @"123";
+    if (param != nil) {
+        [CGlobal showIndicator:self];
+        NetworkParser* manager = [[NetworkParser alloc] init];
+        param[@"mode"] = @"2";
+        param[@"thumb_width"] = [NSString stringWithFormat:@"%d",g_thumb_w];
+        param[@"thumb_height"] = [NSString stringWithFormat:@"%d",g_thumb_h];
+        
+        [manager ontemplateGeneralRequest:param Path:@"/wp-json/custom-plugin/login" withCompletionBlock:^(NSDictionary *dict, NSError *error) {
+            if (dict != nil) {
+                LoginResponse* response = [[LoginResponse alloc] initWithDictionary:dict];
+                self.data1 = response.daily;
+                self.data2 = response.episodes;
+                
+                self.collectionview1.delegate = self;
+                self.collectionview1.dataSource = self;
+                
+                self.collectionview2.delegate = self;
+                self.collectionview2.dataSource = self;
+                
+                [self.collectionview1 reloadData];
+                [self.collectionview2 reloadData];
+            }else{
+                
+            }
+            
+            [CGlobal stopIndicator:self];
+        } method:@"POST"];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

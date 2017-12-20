@@ -133,6 +133,15 @@ int g_thumb_w = 300;
 int g_thumb_h = 167;
 int g_thumb_w_logined = 300;
 int g_thumb_h_logined = 167;
+int g_thumb_w_land = 300;
+int g_thumb_h_land = 167;
+int g_thumb_w_logined_land = 300;
+int g_thumb_h_logined_land = 167;
+CGFloat g_logo_top = 0;
+CGFloat g_logo_top_land = 0;
+CGFloat g_logo_top_logined = 0;
+CGFloat g_logo_top_logined_land = 0;
+
 CGFloat g_l1_top = 0;
 CGFloat g_l2_top = 0;
 CGFloat g_l1_top_land =0 ;

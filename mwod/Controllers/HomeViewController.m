@@ -25,12 +25,20 @@
 #import "TestLoginViewController.h"
 #import "ViewPhotoFull.h"
 
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
 @interface HomeViewController ()
 {
     AVPlayer* _playerURL;
 }
 
 @property (nonatomic,strong) MyPopupDialog* dialog;
+@property (nonatomic,strong) NSIndexPath* path1;
+@property (nonatomic,strong) NSIndexPath* path2;
 @end
 
 @implementation HomeViewController
@@ -62,7 +70,17 @@
 //        UIFont*font = [UIFont fontWithName:fontname size:19];
 //        _lblUser.font = font1;
         
-        _profileImageContainer.cornerRadious = 38;
+        _profileImageContainer.cornerRadious = 29;
+    }
+    
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"11.0")) {
+        // keep
+        self.btnAirplayLabel.hidden = true;
+        self.imgAirplay.hidden = true;
+        self.btnAirplayAction.hidden = true;
+    }else{
+        //
+        
     }
     
 }
@@ -116,6 +134,23 @@
     
     self.collectionview1.backgroundColor = [UIColor clearColor];
     self.collectionview2.backgroundColor = [UIColor clearColor];
+    
+}
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    if (self.collectionview1 == scrollView) {
+        for (UICollectionViewCell *cell in [self.collectionview1 visibleCells]) {
+            NSIndexPath *indexPath = [self.collectionview1 indexPathForCell:cell];
+            NSLog(@"%@",indexPath);
+            self.path1 = indexPath;
+        }
+    }else if (self.collectionview2 == scrollView) {
+        for (UICollectionViewCell *cell in [self.collectionview2 visibleCells]) {
+            NSIndexPath *indexPath = [self.collectionview2 indexPathForCell:cell];
+            NSLog(@"%@",indexPath);
+            self.path2 = indexPath;
+        }
+    }
+    
 }
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
     NSLog(@"viewWillTransitionToSize");
@@ -128,12 +163,21 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBar.hidden = true;
-    [self setStackAxis];
+    double delayInSeconds = 0.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        //code to be executed on the main queue after delay
+        [self setStackAxis];
+    });
 }
 -(void)setStackAxis{
+    AppDelegate* delegate = (AppDelegate* )[[UIApplication sharedApplication] delegate];
     if (![CGlobal isIphone]) {
         if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
             self.stackHolder.axis = UILayoutConstraintAxisVertical;
+            
+            self.carouselLayout1.itemSize = CGSizeMake(g_thumb_w_logined, g_thumb_h_logined);
+            self.carouselLayout2.itemSize = CGSizeMake(g_thumb_w_logined, g_thumb_h_logined);
             
             [self.collectionview1 reloadData];
             [self.collectionview2 reloadData];
@@ -141,17 +185,26 @@
             self.cons_L1_TOP.constant = g_l1_top_logined;
             self.cons_L2_TOP.constant = g_l2_top_logined;
             
-            [self.lblTitle1 setNeedsUpdateConstraints];
-            [self.lblTitle2 setNeedsUpdateConstraints];
-            [self.lblSubtitle1 setNeedsUpdateConstraints];
-            [self.lblSubtitle2 setNeedsUpdateConstraints];
+            NSArray* array = @[self.lblTitle1,self.lblTitle2,self.lblSubtitle1,self.lblSubtitle2];
+            for (UIView* view in array) {
+                [view setNeedsUpdateConstraints];
+                [view layoutIfNeeded];
+            }
             
-            [self.lblTitle1 layoutIfNeeded];
-            [self.lblTitle2 layoutIfNeeded];
-            [self.lblSubtitle1 layoutIfNeeded];
-            [self.lblSubtitle2 layoutIfNeeded];
+            if ([delegate.model isEqualToString:@"ipad_pro_12_9"]) {
+                self.cons_Logo_TOP_IPAD_WRHR.constant = 20;
+                NSArray* array = @[self.imgLogo];
+                for (UIView* view in array) {
+                    [view setNeedsUpdateConstraints];
+                    [view layoutIfNeeded];
+                }
+            }
         }else{
             self.stackHolder.axis = UILayoutConstraintAxisHorizontal;
+            
+            
+            self.carouselLayout1.itemSize = CGSizeMake(g_thumb_w_logined_land, g_thumb_h_logined_land);
+            self.carouselLayout2.itemSize = CGSizeMake(g_thumb_w_logined_land, g_thumb_h_logined_land);
             
             [self.collectionview1 reloadData];
             [self.collectionview2 reloadData];
@@ -159,15 +212,20 @@
             self.cons_L1_TOP.constant = g_l1_top_logined_land;
             self.cons_L2_TOP.constant = g_l2_top_logined_land;
             
-            [self.lblTitle1 setNeedsUpdateConstraints];
-            [self.lblTitle2 setNeedsUpdateConstraints];
-            [self.lblSubtitle1 setNeedsUpdateConstraints];
-            [self.lblSubtitle2 setNeedsUpdateConstraints];
+            NSArray* array = @[self.lblTitle1,self.lblTitle2,self.lblSubtitle1,self.lblSubtitle2];
+            for (UIView* view in array) {
+                [view setNeedsUpdateConstraints];
+                [view layoutIfNeeded];
+            }
             
-            [self.lblTitle1 layoutIfNeeded];
-            [self.lblTitle2 layoutIfNeeded];
-            [self.lblSubtitle1 layoutIfNeeded];
-            [self.lblSubtitle2 layoutIfNeeded];
+            if ([delegate.model isEqualToString:@"ipad_pro_12_9"]) {
+                self.cons_Logo_TOP_IPAD_WRHR.constant = 80;
+                NSArray* array = @[self.imgLogo];
+                for (UIView* view in array) {
+                    [view setNeedsUpdateConstraints];
+                    [view layoutIfNeeded];
+                }
+            }
         }
     }
 }
@@ -301,6 +359,7 @@
     }
 }
 - (IBAction)tapAirplay:(id)sender {
+    
     UIViewController* vc = self;
     NSArray* array = [[NSBundle mainBundle] loadNibNamed:@"ViewPhotoFull" owner:vc options:nil];
     ViewPhotoFull* view = array[0];
@@ -309,6 +368,8 @@
     self.dialog = [[MyPopupDialog alloc] init];
     [self.dialog setup:view backgroundDismiss:true backgroundColor:[UIColor grayColor]];
     [self.dialog showPopup:vc.view];
+    
+    
 }
 
 - (IBAction)tapVisit:(id)sender {

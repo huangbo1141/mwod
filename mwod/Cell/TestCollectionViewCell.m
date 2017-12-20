@@ -1,37 +1,43 @@
 //
-//  VideoCollectionViewCell.m
+//  TestCollectionViewCell.m
 //  mwod
 //
 //  Created by BoHuang on 10/28/17.
 //  Copyright © 2017 BoHuang. All rights reserved.
 //
 
-#import "VideoCollectionViewCell.h"
+#import "TestCollectionViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "TblPost.h"
 #import "CGlobal.h"
+#import <UIImage+FX.h>
 
-#import "ReplaceView.h"
-
-@implementation VideoCollectionViewCell
+@implementation TestCollectionViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
     self.backgroundColor = [UIColor clearColor];
-//    self.imageContent.contentMode = UIViewContentModeScaleAspectFit;
+    //    self.imageContent.contentMode = UIViewContentModeScaleAspectFit;
     [self addShadow:self.rootView Color:@"000000"];
-//    [self addShadow:self.viewTitle Color:@"000000"];
+    //    [self addShadow:self.viewTitle Color:@"000000"];
 }
 -(void)setData:(NSDictionary *)data{
     [super setData:data];
-    self.btnplay.hidden = true;
+    self.viewPlay.hidden = true;
+    if (g_isii) {
+        _viewTitle.hidden = false;
+    }else{
+        _viewTitle.hidden = true;
+    }
+    
     self.activityIndicator.hidden = true;
     if ([self.model isKindOfClass:[TblPost class]]) {
         self.activityIndicator.hidden = false;
         [self.activityIndicator startAnimating];
         TblPost *post = self.model;
         NSLog(@"%@",post.m_video_thumb);
+        self.lblTitle.text = post.post_title;
         
         if ([post.m_video_thumb length]>0) {
             [self setImageData:post];
@@ -53,21 +59,45 @@
     [_imageContent sd_setImageWithURL:[NSURL URLWithString:post.m_video_thumb]
                      placeholderImage:place
                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                NSArray* array = [[NSBundle mainBundle] loadNibNamed:@"ViewPhotoFull" owner:self.vc options:nil];
-                                ReplaceView* view = array[1];
-                                post.m_img_origin = image;
-                                [view setData:post];
-                                
-                                UIImage* shot = [view myScreenShot];
-                                self.imageContent.image = shot;
+                                self.viewPlay.hidden = false;
                                 [self.activityIndicator stopAnimating];
                                 self.activityIndicator.hidden = true;
-                                self.btnplay.hidden = false;
+                                if ([post.post_title length]>0) {
+                                    _viewTitle.hidden = false;
+                                }else{
+                                    _viewTitle.hidden = true;
+                                }
+                                NSLog(@"logged");
                             }];
+    //    if (post.m_img_origin_reflect!=nil) {
+    //        self.viewPlay.hidden = false;
+    //        [self.activityIndicator stopAnimating];
+    //        self.activityIndicator.hidden = true;
+    //        //_imageContent.image = post.m_img_origin_reflect;
+    //        _imageContent.image = post.m_img_origin;
+    //    }else{
+    //        [_imageContent sd_setImageWithURL:[NSURL URLWithString:post.m_video_thumb]
+    //                         placeholderImage:nil
+    //                                completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    //                                    self.viewPlay.hidden = false;
+    //                                    [self.activityIndicator stopAnimating];
+    //                                    self.activityIndicator.hidden = true;
+    //                                    NSLog(@"logged");
+    //                                    post.m_img_origin = image;
+    //                                    post.m_img_origin_reflect = [image reflectedImageWithScale:0.5];
+    ////                                    _imageContent.image = post.m_img_origin_reflect;
+    //                                    _imageContent.image = post.m_img_origin;
+    //
+    //                                }];
+    //    }
     
 }
 -(void)addShadow:(UIView *)view Color:(NSString * ) color
 {
+    //    view.layer.shadowColor = [[self colorWithHexString:color] CGColor];
+    //    view.layer.shadowOffset = CGSizeMake(2, 2);
+    //    view.layer.shadowOpacity = 0.16f;
+    //    view.layer.shadowRadius = 1.0;
     
     view.layer.shadowColor = [[self colorWithHexString:color] CGColor];
     view.layer.shadowOffset = CGSizeMake(2, 2);
@@ -110,3 +140,4 @@
                            alpha:1.0f];
 }
 @end
+
