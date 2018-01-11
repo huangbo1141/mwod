@@ -177,74 +177,135 @@
     self.collectionview2.backgroundColor = [UIColor clearColor];
 }
 -(void)initSample{
-//    NSMutableArray* array = [[NSMutableArray alloc] init];
-//    TblPost* post = [[TblPost alloc] init];
-//    // 52291
-//    post.m_video_id = @"186351783";
-//    post.m_video_type = @"0";
-//    post.m_video_path = @"0";
-//    post.m_video_thumb = @"https://www.mobilitywod.com/wp-content/uploads/2016/10/rx_10112016.jpg";
-//    post.post_title = @"Tuesday, October 11th, 2016";
-//    [array addObject:post];
-//
-//    post = [[TblPost alloc] init];
-//    // 53568
-//    post.m_video_id = @"186351783";
-//    post.m_video_type = @"0";
-//    post.m_video_path = @"0";
-//    post.m_video_thumb = @"https://i.vimeocdn.com/video/596374602";
-//    post.post_title = @"Tuesday, October 11th, 2016";
-//    [array addObject:post];
-//
-//
-//
-//    post = [[TblPost alloc] init];
-//    post.m_video_id = @"124466291";
-//    post.m_video_type = @"0";
-//    post.m_video_path = @"0";
-//    post.m_video_thumb = @"https://i.vimeocdn.com/video/514206897";
-//    if (g_isii) {
-//        post.post_title = @"123456";
-//    }
-//
-//    [array addObject:post];
-//
-//    self.data1 = array;
-//    self.data2 = array;
-//
-//    [self.collectionview1 reloadData];
-//    [self.collectionview2 reloadData];
+    NSMutableArray* array = [[NSMutableArray alloc] init];
+    TblPost* post = [[TblPost alloc] init];
+    post = [[TblPost alloc] init];
+    // 53568
+    post.m_video_id = @"249829052";
+    post.m_video_type = @"0";
+    post.m_video_path = @"0";
+    post.m_video_thumb = @"https://i.vimeocdn.com/video/675754204";
+    post.post_title = @"";
+    [array addObject:post];
     
-    NSMutableDictionary*param = [[NSMutableDictionary alloc] init];
-    param[@"ID"] = @"123";
-    if (param != nil) {
-        [CGlobal showIndicator:self];
-        NetworkParser* manager = [[NetworkParser alloc] init];
-        param[@"mode"] = @"2";
-        param[@"thumb_width"] = [NSString stringWithFormat:@"%d",g_thumb_w];
-        param[@"thumb_height"] = [NSString stringWithFormat:@"%d",g_thumb_h];
-        
-        [manager ontemplateGeneralRequest:param Path:@"/wp-json/custom-plugin/login" withCompletionBlock:^(NSDictionary *dict, NSError *error) {
-            if (dict != nil) {
-                LoginResponse* response = [[LoginResponse alloc] initWithDictionary:dict];
-                self.data1 = response.daily;
-                self.data2 = response.episodes;
-                
-                self.collectionview1.delegate = self;
-                self.collectionview1.dataSource = self;
-                
-                self.collectionview2.delegate = self;
-                self.collectionview2.dataSource = self;
-                
-                [self.collectionview1 reloadData];
-                [self.collectionview2 reloadData];
-            }else{
-                
-            }
-            
-            [CGlobal stopIndicator:self];
-        } method:@"POST"];
-    }
+    post = [[TblPost alloc] init];
+    post.m_video_id = @"249759273";
+    post.m_video_type = @"0";
+    post.m_video_path = @"0";
+    post.m_video_thumb = @"https://i.vimeocdn.com/video/675665806";
+    post.post_title = @"";
+    [array addObject:post];
+
+    post = [[TblPost alloc] init];
+    post.m_video_id = @"249828807";
+    post.m_video_type = @"0";
+    post.m_video_path = @"0";
+    post.m_video_thumb = @"https://i.vimeocdn.com/video/675753756";
+    post.post_title = @"";
+    [array addObject:post];
+    
+    post = [[TblPost alloc] init];
+    post.m_video_id = @"249759137";
+    post.m_video_type = @"0";
+    post.m_video_path = @"0";
+    post.m_video_thumb = @"https://i.vimeocdn.com/video/675665668";
+    post.post_title = @"";
+    [array addObject:post];
+    
+    post = [[TblPost alloc] init];
+    post.m_video_id = @"249758938";
+    post.m_video_type = @"0";
+    post.m_video_path = @"0";
+    post.m_video_thumb = @"https://i.vimeocdn.com/video/675665504";
+    post.post_title = @"";
+    [array addObject:post];
+    
+    self.data1 = array;
+    
+    array = [[NSMutableArray alloc] init];
+    
+    post = [[TblPost alloc] init];
+    post.m_video_id = @"249760352";
+    post.m_video_type = @"0";
+    post.m_video_path = @"0";
+    post.m_video_thumb = @"https://i.vimeocdn.com/video/675667420";
+    post.post_title = @"";
+    [array addObject:post];
+    
+    post = [[TblPost alloc] init];
+    post.m_video_id = @"249760120";
+    post.m_video_type = @"0";
+    post.m_video_path = @"0";
+    post.m_video_thumb = @"https://i.vimeocdn.com/video/675667096";
+    post.post_title = @"";
+    [array addObject:post];
+    
+    post = [[TblPost alloc] init];
+    post.m_video_id = @"249759909";
+    post.m_video_type = @"0";
+    post.m_video_path = @"0";
+    post.m_video_thumb = @"https://i.vimeocdn.com/video/675666756";
+    post.post_title = @"";
+    [array addObject:post];
+    
+    post = [[TblPost alloc] init];
+    post.m_video_id = @"249759698";
+    post.m_video_type = @"0";
+    post.m_video_path = @"0";
+    post.m_video_thumb = @"https://i.vimeocdn.com/video/675666439";
+    post.post_title = @"";
+    [array addObject:post];
+    
+    post = [[TblPost alloc] init];
+    post.m_video_id = @"249759399";
+    post.m_video_type = @"0";
+    post.m_video_path = @"0";
+    post.m_video_thumb = @"https://i.vimeocdn.com/video/675666201";
+    post.post_title = @"";
+    [array addObject:post];
+    
+    self.data2 = array;
+
+    self.collectionview1.delegate = self;
+    self.collectionview1.dataSource = self;
+    
+    self.collectionview2.delegate = self;
+    self.collectionview2.dataSource = self;
+
+    [self.collectionview1 reloadData];
+    [self.collectionview2 reloadData];
+    
+    
+//    NSMutableDictionary*param = [[NSMutableDictionary alloc] init];
+//    param[@"ID"] = @"123";
+//    if (param != nil) {
+//        [CGlobal showIndicator:self];
+//        NetworkParser* manager = [[NetworkParser alloc] init];
+//        param[@"mode"] = @"2";
+//        param[@"thumb_width"] = [NSString stringWithFormat:@"%d",g_thumb_w];
+//        param[@"thumb_height"] = [NSString stringWithFormat:@"%d",g_thumb_h];
+//
+//        [manager ontemplateGeneralRequest:param Path:@"/wp-json/custom-plugin/login" withCompletionBlock:^(NSDictionary *dict, NSError *error) {
+//            if (dict != nil) {
+//                LoginResponse* response = [[LoginResponse alloc] initWithDictionary:dict];
+//                self.data1 = response.daily;
+//                self.data2 = response.episodes;
+//
+//                self.collectionview1.delegate = self;
+//                self.collectionview1.dataSource = self;
+//
+//                self.collectionview2.delegate = self;
+//                self.collectionview2.dataSource = self;
+//
+//                [self.collectionview1 reloadData];
+//                [self.collectionview2 reloadData];
+//            }else{
+//
+//            }
+//
+//            [CGlobal stopIndicator:self];
+//        } method:@"POST"];
+//    }
 }
 
 - (void)didReceiveMemoryWarning {

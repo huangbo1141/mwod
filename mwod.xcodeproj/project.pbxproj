@@ -1143,10 +1143,10 @@
 			baseConfigurationReference = 73EA2112668137DC41955623 /* Pods-mwod.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Juliet Starrett (SVS9DHUMR5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Juliet Starrett (SVS9DHUMR5)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MobilityWOD Inc. (59898PPYAF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MobilityWOD Inc. (59898PPYAF)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 59898PPYAF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1156,8 +1156,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mwod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e56814ea-6eb2-42d0-b446-ef96cbb205c3";
-				PROVISIONING_PROFILE_SPECIFIER = "mwod dev";
+				PROVISIONING_PROFILE = "12ce034c-0831-4860-9f1a-30a320fac4ca";
+				PROVISIONING_PROFILE_SPECIFIER = "mwod appstore";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1168,10 +1168,10 @@
 			baseConfigurationReference = 87B6627F5AD65242157EE4AE /* Pods-mwod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Juliet Starrett (SVS9DHUMR5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Juliet Starrett (SVS9DHUMR5)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: MobilityWOD Inc. (59898PPYAF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MobilityWOD Inc. (59898PPYAF)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 59898PPYAF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1181,8 +1181,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mwod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e56814ea-6eb2-42d0-b446-ef96cbb205c3";
-				PROVISIONING_PROFILE_SPECIFIER = "mwod dev";
+				PROVISIONING_PROFILE = "12ce034c-0831-4860-9f1a-30a320fac4ca";
+				PROVISIONING_PROFILE_SPECIFIER = "mwod appstore";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
