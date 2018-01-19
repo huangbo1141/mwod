@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vB2-nK-gb5">
-    <device id="ipad12_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vB2-nK-gb5">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,15 +33,15 @@
                         <viewControllerLayoutGuide type="bottom" id="FSN-sV-phb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nPT-H5-TtI">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXj-gG-oPN" customClass="YTPlayerView">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="c8D-wT-Jbh">
-                                <rect key="frame" x="493.5" y="664.5" width="37" height="37"/>
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                         </subviews>
@@ -75,11 +75,11 @@
                         <viewControllerLayoutGuide type="bottom" id="4G6-ZP-ndV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KjM-XS-Q9L" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Vimeo Video ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DCY-fM-ZLh">
-                                <rect key="frame" x="138" y="38" width="856" height="30"/>
+                                <rect key="frame" x="134" y="38" width="215" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -88,7 +88,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWl-5n-3gV">
-                                <rect key="frame" x="138" y="84" width="93" height="30"/>
+                                <rect key="frame" x="134" y="84" width="93" height="30"/>
                                 <color key="backgroundColor" red="0.058823529409999999" green="0.035294117649999998" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="93" id="Cnj-kA-zzu"/>
@@ -102,7 +102,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMZ-Er-K1L">
-                                <rect key="frame" x="246" y="84" width="93" height="30"/>
+                                <rect key="frame" x="242" y="84" width="93" height="30"/>
                                 <color key="backgroundColor" red="0.058823529409999999" green="0.035294117649999998" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="93" id="h2c-pg-Ams"/>
@@ -116,7 +116,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJ5-a4-g40">
-                                <rect key="frame" x="347" y="84" width="93" height="30"/>
+                                <rect key="frame" x="343" y="84" width="93" height="30"/>
                                 <color key="backgroundColor" red="0.058823529409999999" green="0.035294117649999998" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="93" id="aUq-4r-xXr"/>
@@ -131,7 +131,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nk6-d5-be6">
-                                <rect key="frame" x="246" y="229" width="93" height="30"/>
+                                <rect key="frame" x="242" y="229" width="93" height="30"/>
                                 <color key="backgroundColor" red="0.058823529409999999" green="0.035294117649999998" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CL0-ov-aIA"/>
@@ -145,7 +145,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Youtube Video ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E6l-7g-aVj">
-                                <rect key="frame" x="138" y="189" width="876" height="30"/>
+                                <rect key="frame" x="134" y="189" width="231" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -154,7 +154,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkx-Aa-MF4">
-                                <rect key="frame" x="138" y="229" width="93" height="30"/>
+                                <rect key="frame" x="134" y="229" width="93" height="30"/>
                                 <color key="backgroundColor" red="0.058823529409999999" green="0.035294117649999998" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OZT-Yh-ocM"/>
@@ -168,30 +168,30 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gh4-fv-YbE">
-                                <rect key="frame" x="30" y="30" width="100" height="100"/>
+                                <rect key="frame" x="26" y="30" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="1gW-kc-UDR"/>
                                     <constraint firstAttribute="height" constant="100" id="6AE-cr-GnT"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LW-n2-n6O">
-                                <rect key="frame" x="138.5" y="30" width="0.0" height="0.0"/>
+                                <rect key="frame" x="134.5" y="30" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="H7N-Uo-7I0">
-                                <rect key="frame" x="493.5" y="664.5" width="37" height="37"/>
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F01-gs-BHl">
-                                <rect key="frame" x="138" y="160" width="42" height="21"/>
+                                <rect key="frame" x="134" y="160" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6l6-P3-DZl">
-                                <rect key="frame" x="0.0" y="144" width="1024" height="2"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="2"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="MOr-Sg-eO7"/>
@@ -201,14 +201,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hns-zg-YlE">
-                                <rect key="frame" x="30" y="160" width="100" height="100"/>
+                                <rect key="frame" x="26" y="160" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Tli-zb-Vy8"/>
                                     <constraint firstAttribute="width" constant="100" id="n3Z-Pg-qHM"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugg-oX-IDs">
-                                <rect key="frame" x="347" y="229" width="93" height="30"/>
+                                <rect key="frame" x="343" y="229" width="93" height="30"/>
                                 <color key="backgroundColor" red="0.058823529409999999" green="0.035294117649999998" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8eM-Sc-1hg"/>
@@ -283,17 +283,17 @@
             <objects>
                 <viewController id="vB2-nK-gb5" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mge-mh-1j6">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7uc-uj-Dff">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="1346"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_mwod_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="6uF-db-A1M">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1346"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="t1V-YQ-2t3">
-                                        <rect key="frame" x="361.5" y="609" width="300" height="128"/>
+                                        <rect key="frame" x="37" y="259.5" width="300" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="819-SY-JP1"/>
                                             <constraint firstAttribute="width" constant="300" id="Gky-Lv-emX"/>
@@ -329,11 +329,11 @@
             <objects>
                 <viewController storyboardIdentifier="SignupViewController" id="n2I-SA-wjx" customClass="SignupViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kwp-cc-xWB">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9C-3l-szc">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="1346"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
@@ -359,14 +359,14 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="DnI-ET-Pys" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="09f-Vu-ObZ">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qx3-mI-Zj6">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="1346"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YYf-l3-K5T">
-                                        <rect key="frame" x="357.5" y="638" width="310" height="70"/>
+                                        <rect key="frame" x="33" y="288.5" width="310" height="70"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rfg-Ro-e1f">
                                                 <rect key="frame" x="0.0" y="0.0" width="310" height="70"/>
@@ -422,7 +422,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgl-f8-T7T">
-                                        <rect key="frame" x="547.5" y="734.5" width="120" height="30"/>
+                                        <rect key="frame" x="223" y="385" width="120" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="pZh-cR-PZt"/>
@@ -470,17 +470,17 @@
             <objects>
                 <viewController storyboardIdentifier="DemoViewController" id="qWZ-jh-Hwn" customClass="DemoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w1P-Ya-E21">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93Z-ga-7Zb">
-                                <rect key="frame" x="0.0" y="64" width="1024" height="1302"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_mwod_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="atx-8k-ytp">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1302"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="hrc-fc-Gyw">
-                                        <rect key="frame" x="261.5" y="20" width="500" height="100"/>
+                                        <rect key="frame" x="27" y="12" width="320" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Owk-4X-a0u">
                                                 <variation key="heightClass=regular" constant="100"/>
@@ -527,7 +527,7 @@
                                         </variation>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8N-63-nJU">
-                                        <rect key="frame" x="334.5" y="132" width="355.5" height="76"/>
+                                        <rect key="frame" x="10" y="80" width="355.5" height="76"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="76" id="3DM-Kr-R6i"/>
                                         </constraints>
@@ -539,25 +539,25 @@ injury, resolve pain, and optimize recovery.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2G-od-8pR" customClass="ColoredView">
-                                        <rect key="frame" x="0.0" y="216" width="1024" height="966"/>
+                                        <rect key="frame" x="0.0" y="164" width="375" height="339"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="X5o-fq-3Ac">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="966"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="339"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="V7u-3Q-EtO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="483"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXH-FC-uYS" customClass="ColoredView">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="90"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERFORM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QX7-HB-a5h">
-                                                                        <rect key="frame" x="450" y="-4" width="124" height="38"/>
+                                                                        <rect key="frame" x="125.5" y="-4" width="124" height="38"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="32"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gym-based mobility &amp; position training" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0x2-Vy-98s">
-                                                                        <rect key="frame" x="379.5" y="28" width="265.5" height="19"/>
+                                                                        <rect key="frame" x="55" y="28" width="265.5" height="19"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
@@ -606,10 +606,10 @@ injury, resolve pain, and optimize recovery.</string>
                                                                 </variation>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRc-2R-GhP" customClass="ColoredView">
-                                                                <rect key="frame" x="0.0" y="90" width="1024" height="393"/>
+                                                                <rect key="frame" x="0.0" y="50" width="375" height="119.5"/>
                                                                 <subviews>
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ido-MB-sU5">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="393"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zih-xH-C3S" customClass="UPCarouselFlowLayout" customModule="mwod" customModuleProvider="target">
                                                                             <size key="itemSize" width="50" height="50"/>
@@ -645,19 +645,19 @@ injury, resolve pain, and optimize recovery.</string>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SyB-Vi-To1">
-                                                        <rect key="frame" x="0.0" y="483" width="1024" height="483"/>
+                                                        <rect key="frame" x="0.0" y="169.5" width="375" height="169.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WV-EU-S0f" customClass="ColoredView">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="90"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RECOVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cF-1h-rdj">
-                                                                        <rect key="frame" x="453" y="-4" width="118" height="38"/>
+                                                                        <rect key="frame" x="128.5" y="-4" width="118" height="38"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="32"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At-home soft-tissue mobilization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lco-Ia-v6S">
-                                                                        <rect key="frame" x="402" y="28" width="221.5" height="19"/>
+                                                                        <rect key="frame" x="77.5" y="28" width="221.5" height="19"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
@@ -706,10 +706,10 @@ injury, resolve pain, and optimize recovery.</string>
                                                                 </variation>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Wq-lb-cH6" customClass="ColoredView">
-                                                                <rect key="frame" x="0.0" y="90" width="1024" height="393"/>
+                                                                <rect key="frame" x="0.0" y="50" width="375" height="119.5"/>
                                                                 <subviews>
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MCc-6h-4c5">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="393"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z9f-gG-HiJ" customClass="UPCarouselFlowLayout" customModule="mwod" customModuleProvider="target">
                                                                             <size key="itemSize" width="50" height="50"/>
@@ -761,10 +761,10 @@ injury, resolve pain, and optimize recovery.</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0x-VR-kyK" customClass="ColoredView">
-                                        <rect key="frame" x="0.0" y="1182" width="1024" height="120"/>
+                                        <rect key="frame" x="0.0" y="503" width="375" height="100"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZX-8q-Kv1">
-                                                <rect key="frame" x="415" y="80" width="195" height="30"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZX-8q-Kv1">
+                                                <rect key="frame" x="101" y="60" width="174" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="HGS-2P-3vz"/>
                                                 </constraints>
@@ -783,25 +783,25 @@ injury, resolve pain, and optimize recovery.</string>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ga0-2z-n7L">
-                                                <rect key="frame" x="415.5" y="27" width="194" height="45"/>
+                                                <rect key="frame" x="91" y="7" width="194" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="194" id="AZk-et-Z1Z"/>
                                                     <constraint firstAttribute="height" constant="45" id="uQ6-rt-J27"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pe-oo-Zab">
-                                                <rect key="frame" x="415.5" y="27" width="194" height="45"/>
+                                                <rect key="frame" x="91" y="7" width="194" height="45"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                                <state key="normal" title="SIGN UP NOW!">
+                                                <state key="normal" title="Log In!">
                                                     <color key="titleColor" red="0.10980392160000001" green="0.62745098040000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="tapSignup:" destination="qWZ-jh-Hwn" eventType="touchUpInside" id="NsB-pm-PhC"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-WE-3WF">
-                                                <rect key="frame" x="412.5" y="104" width="200" height="1"/>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0T-WE-3WF">
+                                                <rect key="frame" x="101" y="84" width="174" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="ehB-p8-CQs"/>
@@ -987,17 +987,17 @@ injury, resolve pain, and optimize recovery.</string>
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="VTY-ZS-i8B" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oWL-Pf-Spn">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9EU-FI-M5i">
-                                <rect key="frame" x="0.0" y="64" width="1024" height="1302"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_mwod_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="esF-ZN-paj">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1302"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="d30-Qg-z90">
-                                        <rect key="frame" x="261.5" y="20" width="500" height="90"/>
+                                        <rect key="frame" x="27" y="18" width="320" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="2m8-oC-OBh"/>
                                             <constraint firstAttribute="height" constant="60" id="ArR-R5-7hd">
@@ -1044,25 +1044,25 @@ injury, resolve pain, and optimize recovery.</string>
                                         </variation>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBJ-3a-kft" customClass="ColoredView">
-                                        <rect key="frame" x="0.0" y="190" width="1024" height="1062"/>
+                                        <rect key="frame" x="0.0" y="166" width="375" height="387"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jIo-TF-b5x">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1062"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="387"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yrq-r7-AWm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="531"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="193.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WG7-kc-fDT" customClass="ColoredView">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="80"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERFORM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdF-SM-3eo">
-                                                                        <rect key="frame" x="449.5" y="8" width="124" height="38"/>
+                                                                        <rect key="frame" x="125" y="8" width="124" height="38"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="32"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gym-based mobility &amp; position training" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsK-RI-tnv">
-                                                                        <rect key="frame" x="379.5" y="40" width="265.5" height="19"/>
+                                                                        <rect key="frame" x="55" y="40" width="265.5" height="19"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
@@ -1111,10 +1111,10 @@ injury, resolve pain, and optimize recovery.</string>
                                                                 </variation>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGy-d3-cDG" customClass="ColoredView">
-                                                                <rect key="frame" x="0.0" y="80" width="1024" height="451"/>
+                                                                <rect key="frame" x="0.0" y="50" width="375" height="143.5"/>
                                                                 <subviews>
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ez8-ek-1Pp">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="451"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="143.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="foz-0c-b2B" customClass="UPCarouselFlowLayout" customModule="mwod" customModuleProvider="target">
                                                                             <size key="itemSize" width="50" height="50"/>
@@ -1150,19 +1150,19 @@ injury, resolve pain, and optimize recovery.</string>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sRz-fG-FTJ">
-                                                        <rect key="frame" x="0.0" y="531" width="1024" height="531"/>
+                                                        <rect key="frame" x="0.0" y="193.5" width="375" height="193.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SgZ-kg-uir" customClass="ColoredView">
-                                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="80"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RECOVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3r-CU-71f">
-                                                                        <rect key="frame" x="452.5" y="8" width="118" height="38"/>
+                                                                        <rect key="frame" x="128" y="8" width="118" height="38"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="32"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At-home soft-tissue mobilization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSa-wR-MZM">
-                                                                        <rect key="frame" x="401.5" y="40" width="221.5" height="19"/>
+                                                                        <rect key="frame" x="77" y="40" width="221.5" height="19"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
@@ -1211,10 +1211,10 @@ injury, resolve pain, and optimize recovery.</string>
                                                                 </variation>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi7-kh-lkp" customClass="ColoredView">
-                                                                <rect key="frame" x="0.0" y="80" width="1024" height="451"/>
+                                                                <rect key="frame" x="0.0" y="50" width="375" height="143.5"/>
                                                                 <subviews>
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="py0-LZ-Kic">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="451"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="143.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="k4D-0g-snR" customClass="UPCarouselFlowLayout" customModule="mwod" customModuleProvider="target">
                                                                             <size key="itemSize" width="50" height="50"/>
@@ -1266,7 +1266,7 @@ injury, resolve pain, and optimize recovery.</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0j-He-rej" customClass="ColoredView">
-                                        <rect key="frame" x="0.0" y="1252" width="1024" height="50"/>
+                                        <rect key="frame" x="0.0" y="553" width="375" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logout.png" translatesAutoresizingMaskIntoConstraints="NO" id="48V-dy-zZy">
                                                 <rect key="frame" x="36.5" y="14.5" width="16" height="16"/>
@@ -1282,8 +1282,8 @@ injury, resolve pain, and optimize recovery.</string>
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Bc-Bw-SAJ">
-                                                <rect key="frame" x="419.5" y="16" width="185" height="30"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Bc-Bw-SAJ">
+                                                <rect key="frame" x="95" y="16" width="185" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="VMl-b5-bpJ"/>
                                                 </constraints>
@@ -1295,8 +1295,8 @@ injury, resolve pain, and optimize recovery.</string>
                                                     <action selector="tapVisit:" destination="VTY-ZS-i8B" eventType="touchUpInside" id="jHW-ah-WcE"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8M1-HF-lH9">
-                                                <rect key="frame" x="420.5" y="40" width="183" height="1"/>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8M1-HF-lH9">
+                                                <rect key="frame" x="96" y="40" width="183" height="1"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="MXi-JO-T4F"/>
@@ -1310,21 +1310,21 @@ injury, resolve pain, and optimize recovery.</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRR-Vu-8k5">
-                                                <rect key="frame" x="957" y="21.5" width="47" height="31"/>
+                                                <rect key="frame" x="308" y="21.5" width="47" height="31"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="16"/>
                                                 <state key="normal" title="AirPlay">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airplay.png" translatesAutoresizingMaskIntoConstraints="NO" id="67J-0o-rei">
-                                                <rect key="frame" x="970.5" y="14.5" width="20" height="16"/>
+                                                <rect key="frame" x="321.5" y="14.5" width="20" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="SfH-JX-FK8"/>
                                                     <constraint firstAttribute="width" constant="20" id="vsz-PO-pP2"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xl7-96-Jiw">
-                                                <rect key="frame" x="957" y="14.5" width="47" height="38"/>
+                                                <rect key="frame" x="308" y="14.5" width="47" height="38"/>
                                                 <connections>
                                                     <action selector="tapAirplay:" destination="VTY-ZS-i8B" eventType="touchUpInside" id="72T-7L-0mv"/>
                                                 </connections>
@@ -1361,16 +1361,16 @@ injury, resolve pain, and optimize recovery.</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ur0-EU-bmk">
-                                        <rect key="frame" x="0.0" y="100" width="1024" height="90"/>
+                                        <rect key="frame" x="0.0" y="76" width="375" height="90"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="NnP-Qv-6iz">
-                                                <rect key="frame" x="457" y="11" width="111" height="81.5"/>
+                                                <rect key="frame" x="132.5" y="16" width="111" height="71.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yc3-8d-i5g" customClass="ColoredView">
-                                                        <rect key="frame" x="26.5" y="0.0" width="58" height="58"/>
+                                                        <rect key="frame" x="31.5" y="0.0" width="48" height="48"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_user.png" translatesAutoresizingMaskIntoConstraints="NO" id="UhJ-hn-jAh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="58" height="58"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1429,7 +1429,7 @@ injury, resolve pain, and optimize recovery.</string>
                                                         </variation>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgi-hz-99L">
-                                                        <rect key="frame" x="0.0" y="62" width="111" height="19.5"/>
+                                                        <rect key="frame" x="0.0" y="52" width="111" height="19.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -1505,30 +1505,30 @@ injury, resolve pain, and optimize recovery.</string>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="9Cj-kl-SXv"/>
-                                        <exclude reference="A9v-ql-ixU"/>
                                         <exclude reference="Eax-W3-TnP"/>
                                         <exclude reference="W4y-Uv-2J9"/>
+                                        <exclude reference="9Cj-kl-SXv"/>
+                                        <exclude reference="A9v-ql-ixU"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="constraints">
-                                        <include reference="A9v-ql-ixU"/>
-                                        <exclude reference="ebs-it-Fv8"/>
                                         <exclude reference="TAp-gv-o26"/>
                                         <include reference="W4y-Uv-2J9"/>
+                                        <include reference="A9v-ql-ixU"/>
+                                        <exclude reference="ebs-it-Fv8"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="9Cj-kl-SXv"/>
                                         <include reference="Eax-W3-TnP"/>
+                                        <include reference="9Cj-kl-SXv"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <exclude reference="A9v-ql-ixU"/>
                                         <exclude reference="W4y-Uv-2J9"/>
+                                        <exclude reference="A9v-ql-ixU"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1577,7 +1577,7 @@ injury, resolve pain, and optimize recovery.</string>
                 <navigationController storyboardIdentifier="CMainNav" automaticallyAdjustsScrollViewInsets="NO" id="UDo-eb-fev" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gki-kt-C2E">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1595,7 +1595,7 @@ injury, resolve pain, and optimize recovery.</string>
                 <navigationController storyboardIdentifier="CDefaultNav" automaticallyAdjustsScrollViewInsets="NO" id="B7K-Ve-Xnd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zOl-x9-tEw">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1612,11 +1612,11 @@ injury, resolve pain, and optimize recovery.</string>
             <objects>
                 <viewController storyboardIdentifier="TestLoginViewController" automaticallyAdjustsScrollViewInsets="NO" id="D2w-f1-c18" customClass="TestLoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xfU-fJ-Xxr">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bgv-Vx-V9r">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="1346"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>

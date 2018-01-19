@@ -404,12 +404,13 @@
     }
 }
 - (IBAction)tapSignup:(id)sender {
-    UIStoryboard* ms = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    TestLoginViewController*vc = [ms instantiateViewControllerWithIdentifier:@"TestLoginViewController"] ;
-    vc.mode = @"signup";
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.navigationController pushViewController:vc animated:true];
-    });
+//    UIStoryboard* ms = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    TestLoginViewController*vc = [ms instantiateViewControllerWithIdentifier:@"TestLoginViewController"] ;
+//    vc.mode = @"signup";
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self.navigationController pushViewController:vc animated:true];
+//    });
+    [self tapLogin:sender];
 }
 - (IBAction)tapLogin:(id)sender {
     UIStoryboard* ms = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
